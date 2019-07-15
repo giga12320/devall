@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Dev_ProductComments::greetings" title="Comments" translate="title" module="Dev_ProductComments" parent="Magento_Backend::content" sortOrder="50" dependsOnModule="Dev_ProductComments" resource="Dev_ProductComments::greetings"/>
+        <add id="Dev_ProductComments::greetings_helloworld" title="Product Comments" translate="title" module="Dev_ProductComments" parent="Dev_ProductComments::greetings" sortOrder="10" dependsOnModule="Dev_ProductComments" action="exampleadminnewpage/helloworld/" resource="Dev_ProductComments::greetings"/>
+    </menu>
+</config>

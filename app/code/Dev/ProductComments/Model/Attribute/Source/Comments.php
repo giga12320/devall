@@ -3,7 +3,7 @@
 
 namespace Dev\ProductComments\Model\Attribute\Source;
 
-class Material extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSource
+class Comments extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSource
 {
     /**
      * Get all options

@@ -2,7 +2,7 @@
 
 namespace Dev\ProductComments\Model\Attribute\Backend;
 
-class Material extends \Magento\Eav\Model\Entity\Attribute\Backend\AbstractBackend
+class Comments extends \Magento\Eav\Model\Entity\Attribute\Backend\AbstractBackend
 {
     /**
      * Validate
@@ -13,11 +13,11 @@ class Material extends \Magento\Eav\Model\Entity\Attribute\Backend\AbstractBacke
     public function validate($object)
     {
         $value = $object->getData($this->getAttribute()->getAttributeCode());
-        if ( ($object->getAttributeSetId() == 10) && ($value == 'wool')) {
-            throw new \Magento\Framework\Exception\LocalizedException(
-                __('Bottom can not be wool.')
-            );
-        }
+    #            if ($value == 'no') {
+     #       throw new \Magento\Framework\Exception\LocalizedException(
+     #           __('comments are not allowed for this product')
+    #        );
+  #      }
         return true;
     }
 }

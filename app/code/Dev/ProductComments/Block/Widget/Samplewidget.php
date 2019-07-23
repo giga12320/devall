@@ -38,7 +38,9 @@ class Samplewidget extends Template implements BlockInterface
 
     public function getProductCollection()
     {
-        $criteria = $this->criteriaBuilder->addFilter('Product_Comments', 'yes')->create();
+        $criteria = $this->criteriaBuilder
+            ->addFilter('product_comments', 'yes')
+            ->create();
 
         return $this->productRepository->getList($criteria)->getItems();
     }

@@ -38,15 +38,15 @@ class InstallData implements InstallDataInterface
         $eavSetup = $this->eavSetupFactory->create(['setup' => $setup]);
         $eavSetup->addAttribute(
             \Magento\Catalog\Model\Product::ENTITY,
-            'Product_Comments',
+            'product_comments',
             [
                 'group' => 'General',
                 'type' => 'varchar',
-                'label' => 'Product_Comments',
+                'label' => 'Product Comments',
                 'input' => 'select',
-                'source' => Dev\ProductComments\Model\Attribute\Source\Comments::class,
-                'frontend' => Dev\ProductComments\Model\Attribute\Frontend\Comments::class,
-                'backend' => Dev\ProductComments\Model\Attribute\Backend\Comments::class,
+                'source' => \Dev\ProductComments\Model\Attribute\Source\Comments::class,
+                'frontend' => \Dev\ProductComments\Model\Attribute\Frontend\Comments::class,
+                'backend' => \Dev\ProductComments\Model\Attribute\Backend\Comments::class,
                 'required' => false,
                 'sort_order' => 50,
                 'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,

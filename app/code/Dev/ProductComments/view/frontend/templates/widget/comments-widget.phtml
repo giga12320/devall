@@ -41,9 +41,7 @@
                                   class="price-wrapper ">
                                 <span class="price">
                                     <?php
-                                    $price = $item->getPrice();
-                                    $priceFormat = number_format($price, 2, '.', '');
-                                    echo '$' . $priceFormat;
+                                    echo $block->getFormatedPrice($item->getPrice());
                                     ?>
                                 </span>
                             </span>

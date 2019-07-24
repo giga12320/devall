@@ -6,10 +6,10 @@ use Magento\Framework\Api\SearchCriteriaBuilder;
 use Magento\Framework\View\Element\Template;
 use Magento\Widget\Block\BlockInterface;
 
-class Samplewidget extends Template implements BlockInterface
+class commentsWidget extends Template implements BlockInterface
 {
 
-    protected $_template = "widget/samplewidget.phtml";
+    protected $_template = "widget/commentswidget.phtml";
     /**
      * @var ProductRepositoryInterface
      */

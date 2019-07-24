@@ -1,0 +1,14 @@
+<?php
+/**
+ * @var $block \Dev\ProductComments\Block\Widget\commentsWidget
+ */
+?>
+<?php if($block->getData('commentsWidget')): ?>
+    <h2 class='commentswidget'><?php echo $block->getData('commentsWidget'); ?></h2>
+    <p>
+        <?php
+        $collection = $block->getProductCollection();
+        var_dump($collection);
+        ?>
+    </p>
+<?php endif; ?>

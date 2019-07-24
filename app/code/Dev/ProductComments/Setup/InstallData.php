@@ -1,8 +1,11 @@
 <?php
+
 namespace Dev\ProductComments\Setup;
+
 use Magento\Framework\Setup\InstallDataInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
+
 /**
  * @codeCoverageIgnore
  */
@@ -13,6 +16,7 @@ class InstallData implements InstallDataInterface
      * @var EavSetupFactory
      */
     private $eavSetupFactory;
+
     /**
      * Init
      * @param EavSetupFactory $eavSetupFactory
@@ -21,6 +25,7 @@ class InstallData implements InstallDataInterface
     {
         $this->eavSetupFactory = $eavSetupFactory;
     }
+
     /**
      * {@inheritdoc}
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)
@@ -38,9 +43,8 @@ class InstallData implements InstallDataInterface
                 'type' => 'varchar',
                 'label' => 'Product Comments',
                 'input' => 'select',
-                'source' => \Dev\ProductComments\Model\Attribute\Source\Material::class,
-                'frontend' => \Dev\ProductComments\Model\Attribute\Frontend\Material::class,
-                'backend' => \Dev\ProductComments\Model\Attribute\Backend\Material::class,
+                'source' => \Dev\ProductComments\Model\Attribute\Source\Comments::class,
+                'frontend' => \Dev\ProductComments\Model\Attribute\Frontend\Comments::class,
                 'required' => false,
                 'sort_order' => 50,
                 'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,

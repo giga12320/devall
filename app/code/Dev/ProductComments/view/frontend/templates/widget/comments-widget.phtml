@@ -1,14 +1,56 @@
 <?php
 /**
- * @var $block \Dev\ProductComments\Block\Widget\commentsWidget
+ * @var $block \Dev\ProductComments\Block\Widget\CommentsWidget
  */
 ?>
-<?php if($block->getData('commentsWidget')): ?>
-    <h2 class='commentswidget'><?php echo $block->getData('commentsWidget'); ?></h2>
-    <p>
+
+<div class="products wrapper grid products-grid">
+
+    <ol class="products list items product-items">
         <?php
-        $collection = $block->getProductCollection();
-        var_dump($collection);
-        ?>
-    </p>
-<?php endif; ?>
+        $collection = $block->getProductCollection($block->getData('limiter'));
+
+        foreach ($collection as $item) :
+            ?>
+            <li class="item product product-item">
+                <div class="product-item-info" data-container="product-grid">
+                    <a href="<?php echo $item->getUrlInStore() ?>" class="product photo product-item-photo"
+                       tabindex="-1">
+                    <span class="product-image-container"
+                          style="width:240px;">
+                        <span class="product-image-wrapper"
+                              style="padding-bottom: 125%;">
+                            <img class="product-image-photo"
+                                 src="<?php echo $imgUrl = $this->getItemImage($item); ?>"
+                                 width="135"
+                                 height="135"
+                                 alt="<?php echo $item->getPrice() ?>"/>
+                        </span>
+                    </span>
+                    </a>
+                    <div class="product details product-item-details">
+                        <strong class="product name product-item-name">
+                            <a class="product-item-link" href="<?php echo $item->getUrlInStore() ?>">
+                                <?php echo $item->getName() ?>
+                            </a>
+                        </strong>
+                        <div class="price-box price-final_price" data-role="priceBox" data-product-id="3">
+                        <span class="price-container price-final_price tax weee">
+                            <span id="" data-price-amount="<?php echo $item->getPrice() ?>"
+                                  data-price-type="finalPrice"
+                                  class="price-wrapper ">
+                                <span class="price">
+                                    <?php
+                                    echo $block->getFormatedPrice($item->getPrice());
+                                    ?>
+                                </span>
+                            </span>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        <?php endforeach; ?>
+    </ol>
+
+</div>

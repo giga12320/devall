@@ -63,13 +63,8 @@ class CommentsWidget extends Template implements BlockInterface
 
     private $imageHelper;
 
-    public function getItemImage($productId)
+    public function getItemImage($product)
     {
-        try {
-            $product = $this->productRepository->getById($productId);
-        } catch (NoSuchEntityException $e) {
-            return 'product not found';
-        }
         $imageUrl = $this->imageHelper->init($product, 'product_base_image')->getUrl();
         return $imageUrl;
     }
